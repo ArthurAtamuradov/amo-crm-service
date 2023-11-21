@@ -292,7 +292,10 @@ export class AmoCrmService {
           )
           .pipe(
             catchError((error: AxiosError) => {
-              console.log('Axios error:', error);
+              console.log(
+                'Axios error:',
+                error.response.data['validation-errors'],
+              );
               throw AxiosError;
             }),
           ),
