@@ -222,11 +222,24 @@ export class AmoCrmService {
     try {
       const { data } = await firstValueFrom(
         this.httpService
-          .patch(url, updatedData, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
+          .patch(
+            url,
+            {
+              name: updatedData.name,
+              custom_fields_values: [
+                {
+                  field_id: 'email',
+                  values: [{ value: updatedData.email }],
+                },
+                { field_id: 'phone', values: [{ value: updatedData.phone }] },
+              ],
             },
-          })
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            },
+          )
           .pipe(
             catchError((error: AxiosError) => {
               console.log('Axios error:', error);
@@ -261,7 +274,16 @@ export class AmoCrmService {
         this.httpService
           .post(
             url,
-            { name, phone, email },
+            {
+              name,
+              custom_fields_values: [
+                {
+                  field_id: 'email',
+                  values: [{ value: email }],
+                },
+                { field_id: 'phone', values: [{ value: phone }] },
+              ],
+            },
             {
               headers: {
                 Authorization: `Bearer ${this.accessToken}`,
