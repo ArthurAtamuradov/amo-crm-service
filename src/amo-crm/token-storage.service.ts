@@ -25,7 +25,11 @@ export class TokenStorageService {
     refreshToken: string;
     expiresIn: number;
   }): void {
-    const dataToWrite = JSON.stringify(tokens, null, 2);
-    fs.writeFileSync(this.filePath, dataToWrite, 'utf8');
+    try {
+      const dataToWrite = JSON.stringify(tokens, null, 2);
+      fs.writeFileSync(this.filePath, dataToWrite, 'utf8');
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

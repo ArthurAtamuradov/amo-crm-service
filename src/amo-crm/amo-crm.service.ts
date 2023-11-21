@@ -189,8 +189,9 @@ export class AmoCrmService {
           ),
       );
 
-      const contacts = data._embedded.contacts;
       console.log(data);
+
+      const contacts = data._embedded.contacts;
 
       if (contacts && contacts.length > 0) {
         // Assuming that the first contact in the list is the desired one
