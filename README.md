@@ -4,6 +4,10 @@
 
 The AmoCRM Service is a Node.js service built with NestJS for interacting with the AmoCRM API. It provides functionality to find or create contacts and deals in AmoCRM based on user data.
 
+## Deployed on cyclic
+
+https://ill-puce-grasshopper-coat.cyclic.app/
+
 ## Installation
 
 1. Clone the repository.
@@ -23,4 +27,4 @@ The AmoCRM Service is a Node.js service built with NestJS for interacting with t
   - `AMO_API_URL`: URL of the AmoCRM API.
   - `AMO_SECRET_KEY`: Your AmoCRM API key.
   - `AMO_CLIENT_ID`: Your AmoCRM API client ID
-  -
+  - `AMO_REDIRECT_URI`: Your AmoCRM integration redirect_URI
