@@ -165,7 +165,7 @@ export class AmoCrmService {
     email: string,
     phone: string,
   ): Promise<number | null> {
-    const url = '${this.apiUrl}/api/v4/contacts';
+    const url = `${this.apiUrl}/api/v4/contacts`;
     await this.VerifyIfAccessTokenValid();
 
     try {
