@@ -175,6 +175,7 @@ export class AmoCrmService {
         this.httpService
           .get(url, {
             headers: {
+              Accept: 'application/hal+json',
               Authorization: `Bearer ${this.accessToken}`,
             },
             params: {
