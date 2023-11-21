@@ -294,7 +294,7 @@ export class AmoCrmService {
             catchError((error: AxiosError) => {
               console.log(
                 'Axios error:',
-                error.response.data['validation-errors'],
+                error.response.data['validation-errors'].errors,
               );
               throw AxiosError;
             }),
