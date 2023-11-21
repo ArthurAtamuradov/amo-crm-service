@@ -125,6 +125,8 @@ export class AmoCrmService {
         expiresIn: data.expires_in + Math.floor(Date.now() / 1000),
       };
 
+      this.setTokens(tokens);
+
       this.tokenStorage.writeTokens(tokens);
       return tokens;
     } catch (error) {
@@ -188,6 +190,8 @@ export class AmoCrmService {
       );
 
       const contacts = data._embedded.contacts;
+      console.log(data);
+
       if (contacts && contacts.length > 0) {
         // Assuming that the first contact in the list is the desired one
         const foundContact = contacts[0];
