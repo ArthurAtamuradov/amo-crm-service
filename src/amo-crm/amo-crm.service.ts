@@ -192,7 +192,7 @@ export class AmoCrmService {
 
       console.log(data);
 
-      const contacts = data._embedded.contacts;
+      const contacts = data ? data._embedded.contacts : null;
 
       if (contacts && contacts.length > 0) {
         // Assuming that the first contact in the list is the desired one
