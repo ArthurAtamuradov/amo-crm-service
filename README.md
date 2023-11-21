@@ -21,11 +21,6 @@ The AmoCRM Service is a Node.js service built with NestJS for interacting with t
 
 - **Environment Variables:**
   - `AMO_API_URL`: URL of the AmoCRM API.
-  - `AMO_API_KEY`: Your AmoCRM API key.
-  - `PORT`: The port on which the service runs (default is 3000).
-
-
-## Testing
-
-1. Run unit tests with `npm test`.
-2. For end-to-end tests, use a testing framework of your choice.
+  - `AMO_SECRET_KEY`: Your AmoCRM API key.
+  - `AMO_CLIENT_ID`: Your AmoCRM API client ID
+  -
